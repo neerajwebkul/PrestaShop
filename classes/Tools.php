@@ -2155,7 +2155,8 @@ class ToolsCore
             $content = curl_exec($curl);
 
             if (false === $content && _PS_MODE_DEV_) {
-                $errorMessage = sprintf('file_get_contents_curl failed to download %s : (error code %d) %s',
+                $errorMessage = sprintf(
+                    'file_get_contents_curl failed to download %s : (error code %d) %s',
                     $url,
                     curl_errno($curl),
                     curl_error($curl)
@@ -4179,7 +4180,9 @@ exit;
             return;
         }
 
-        $sort_function = function ($a, $b) use ($column) { return $b[$column] > $a[$column] ? 1 : -1; };
+        $sort_function = function ($a, $b) use ($column) {
+            return $b[$column] > $a[$column] ? 1 : -1;
+        };
 
         uasort($rows, $sort_function);
 
@@ -4342,9 +4345,9 @@ function cmpPriceAsc($a, $b)
     return 0;
 }
 
-function cmpPriceDesc($a, $b)
-{
-    if ((float) $a['price_tmp'] < (float) $b['price_tmp']) {
+function cmpPriceDesc($a, $b) {
+    if ((float) $a['price_tmp'] < (float) $b['price_tmp'])
+    {
         return 1;
     } elseif ((float) $a['price_tmp'] > (float) $b['price_tmp']) {
         return -1;
