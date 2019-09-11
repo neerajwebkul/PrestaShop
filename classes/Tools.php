@@ -4345,9 +4345,9 @@ function cmpPriceAsc($a, $b)
     return 0;
 }
 
-function cmpPriceDesc($a, $b) {
-    if ((float) $a['price_tmp'] < (float) $b['price_tmp'])
-    {
+function cmpPriceDesc($a, $b)
+{
+    if ((float) $a['price_tmp'] < (float) $b['price_tmp']) {
         return 1;
     } elseif ((float) $a['price_tmp'] > (float) $b['price_tmp']) {
         return -1;
